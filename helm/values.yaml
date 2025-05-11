@@ -1,0 +1,22 @@
+deployment:
+  name: tetris-sept24-project
+  replicaCount: 1
+image:
+  repository: 879381264703.dkr.ecr.ap-south-1.amazonaws.com
+  tag: 1
+  containerPort: 3000
+service:
+  type: ClusterIP
+  clusterIPPort: 3000
+resource:
+  cpu:
+    requests: 0.1
+    limit: 0.2
+  memory:
+    requests: 200Mi
+    limit: 300Mi
+environment:
+  env: DEV
+  path: tetris.sskdevops.com
+namespace: dev
+acmCertificateARN: arn:aws:acm:ap-south-1:879381264703:certificate/74f6272f-2b01-431c-b0dd-632d460ffe06
